@@ -7,7 +7,12 @@ namespace PurchaseRequestSystemDb {
     class Program {
         static void Main(string[] args) {
             
+            static string formatPhone(string phoneNum, string phoneFormat) {
+                if (phoneFormat == "") 
+                  return  phoneFormat = "(###-###-####)";
+                
 
+            }
 
 
 
@@ -27,12 +32,16 @@ namespace PurchaseRequestSystemDb {
                 var rowsAffected = context.SaveChanges();
                 if (rowsAffected != 1) throw new Exception("User Add Failed");
                 else { Console.WriteLine("User Add Successful"); }
-            }
-            static void CheckForUser(AppDbContext context) {
-                var usrs = context.Users.ToList();
-                if (usrs.Exists()) {
+            }  //Add a user into the database
+            static bool CheckForUser(AppDbContext context, int userId) {   //Check database to see if user exists
+                var user = context.Users.Where(u => u.Id == userId).FirstOrDefault();
+                if (user == null)
+                    return false;
+                
+                //var usrs = context.Users.ToList();
+                //if (usrs.Exists()) {
 
-                }
+                //}
             }
         }
     }

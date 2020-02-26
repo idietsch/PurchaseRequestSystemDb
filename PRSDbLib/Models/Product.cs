@@ -11,5 +11,11 @@ namespace PRSDbLib.Folder {
         public string Unit { get; set; }
         public string PhotoPath { get; set; }
         public int VendorId { get; set; }
+
+        public Vendor Vendor { get; set; }
+
+        public Product() {
+
+        }
     }
 }

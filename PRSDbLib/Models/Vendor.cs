@@ -13,5 +13,10 @@ namespace PRSDbLib.Folder {
         public string Zip { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        public List<Product> Products { get; set; }
+
+        public Vendor() {
+
+        }
     }
 }
