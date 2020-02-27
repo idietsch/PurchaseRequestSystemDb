@@ -14,17 +14,17 @@ namespace PurchaseRequestSystemDb {
             //RequestController.AddRequest(context);
             //RequestLineController.AddRequestLine(context);
 
-            UserController.GetUserByPk(context);
-            VendorController.GetVendorByPk(context);
-            ProductController.GetProductByPk(context);
-            RequestController.GetRequestsByPk(context);
-            RequestLineController.GetRequestLinesByPk(context);
+            //UserController.GetUserByPk(context);
+            //VendorController.GetVendorByPk(context);
+            //ProductController.GetProductByPk(context);
+            //RequestController.GetRequestsByPk(context);
+            //RequestLineController.GetRequestLinesByPk(context);
             //
-            //UserController.GetAllUsers(context);
-            //VendorController.GetAllVendors(context);
-            //ProductController.GetAllProducts(context);
-            //RequestController.GetAllRequests(context);
-            //RequestLineController.GetAllRequestLines(context);
+            UserController.GetAllUsers(context);
+            VendorController.GetAllVendors(context);
+            ProductController.GetAllProducts(context);
+            RequestController.GetAllRequests(context);
+            RequestLineController.GetAllRequestLines(context);
             //
             //UserController.UpdateUser(context);
             //VendorController.UpdateVendors(context);

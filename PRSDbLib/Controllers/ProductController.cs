@@ -31,7 +31,7 @@ namespace PRSDbLib.Controllers {
             Console.WriteLine("Delete Successful");
         }
         public static void GetAllProducts(AppDbContext context) {
-            var prods = context.Users.ToList();
+            var prods = context.Products.ToList();
             foreach (var p in prods) {
                 Console.WriteLine(p);
             }
