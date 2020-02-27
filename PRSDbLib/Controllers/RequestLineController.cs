@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PRSDbLib.Controllers {
     public class RequestLineController {
-        static void AddRequestLine(AppDbContext context) {
+        public static void AddRequestLine(AppDbContext context) {
             var reql = new RequestLine {
                 Id = 0,
                 ProductId = 0,
@@ -19,26 +19,28 @@ namespace PRSDbLib.Controllers {
             else { Console.WriteLine("RequestLine Add Successful"); }
         }
 
-        static void DeleteRequestLine(AppDbContext context) {
+        public static void DeleteRequestLine(AppDbContext context) {
             var keytodelete = 1;
             var requestlinetodelete = context.RequestLines.Find(keytodelete);
             if (requestlinetodelete == null) throw new Exception("RequestLine Not Found");
+            context.Remove(requestlinetodelete);
             var rowsAffected = context.SaveChanges();
             if (rowsAffected != 1) throw new Exception("Delete Failed");
+            Console.WriteLine("Delete Successful");
         }
-        static void GetAllRequestLines(AppDbContext context) {
+        public static void GetAllRequestLines(AppDbContext context) {
             var reqls = context.RequestLines.ToList();
             foreach (var r in reqls) {
                 Console.WriteLine(r);
             }
         }
-        static void GetRequestLinesByPk(AppDbContext context) {
+        public static void GetRequestLinesByPk(AppDbContext context) {
             var reqlpk = 1;
             var reql = context.Requests.Find(reqlpk);
             if (reql == null) throw new Exception("RequestLine Not Found");
             Console.WriteLine(reql);
         }
-        static void UpdateRequestLines(AppDbContext context) {
+        public static void UpdateRequestLines(AppDbContext context) {
             var reqpk = 1;
             var req = context.RequestLines.Find(reqpk);
             if (req == null) throw new Exception("RequestLine Not Found");

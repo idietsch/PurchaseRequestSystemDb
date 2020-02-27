@@ -13,6 +13,8 @@ namespace PRSDbLib.Folder {
 
         public virtual Request Requestx { get; set; }
         public virtual Product Productx { get; set; }
+
+        public override string ToString() => $"{Id}|{RequestId}|{ProductId}|{Quantity}";
         public RequestLine() {
 
         }

@@ -21,7 +21,7 @@ namespace PRSDbLib {
             }
         }
 
-        protected override void ModelCreating(ModelBuilder model) {
+        protected override void OnModelCreating(ModelBuilder model) {
             model.Entity<User>(e => {
                 e.ToTable("Users");
                 e.HasKey(x => x.Id);

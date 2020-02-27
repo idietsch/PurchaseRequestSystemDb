@@ -13,7 +13,9 @@ namespace PRSDbLib.Folder {
         public string Zip { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public List<Product> Products { get; set; }
+        public virtual List<Product> Products { get; set; }
+
+        public override string ToString() => $"{Id}|{Code}|{Name}|{Address}|{City}|{Zip}|{Phone}|{Email}";
 
         public Vendor() {
 

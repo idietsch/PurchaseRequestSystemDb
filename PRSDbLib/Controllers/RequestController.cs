@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PRSDbLib.Controllers {
     public class RequestController {
-        static void AddRequest(AppDbContext context) {
+        public static void AddRequest(AppDbContext context) {
             var req = new Request {
                 Id = 0,
                 Description = "Request 1",
@@ -23,14 +23,16 @@ namespace PRSDbLib.Controllers {
             else { Console.WriteLine("Request Add Successful"); }
         }
         
-        static void DeleteRequest(AppDbContext context) {
+        public static void DeleteRequest(AppDbContext context) {
             var keytodelete = 1;
             var requesttodelete = context.Requests.Find(keytodelete);
             if (requesttodelete == null) throw new Exception("Not Found");
+            context.Requests.Remove(requesttodelete);
             var rowsAffected = context.SaveChanges();
             if (rowsAffected != 1) throw new Exception("Delete Failed");
+            Console.WriteLine("Delete Successful");
         }
-        static void GetAllRequests(AppDbContext context) {
+        public static void GetAllRequests(AppDbContext context) {
             var reqs = context.Requests.ToList();
             foreach(var r in reqs) {
                 Console.WriteLine(r);
@@ -40,7 +42,7 @@ namespace PRSDbLib.Controllers {
         //public IEnumerable<Request> GetAll(){
         //  return context.Requests.ToList();
         //}
-        static void GetRequestsByPk(AppDbContext context) {
+        public static void GetRequestsByPk(AppDbContext context) {
             var reqpk = 1;
             var req = context.Requests.Find(reqpk);
             if (req == null) throw new Exception("Request Not Found");
@@ -50,7 +52,7 @@ namespace PRSDbLib.Controllers {
         //public Request GetByPk(int id) {
         //  if(id < 1) throw new Exception("Id must be > 0");
         //  return context.Requests.Find(id);
-        static void UpdateRequests(AppDbContext context) {
+        public static void UpdateRequests(AppDbContext context) {
             var reqpk = 1;
             var req = context.Requests.Find(reqpk);
             if (req == null) throw new Exception("Request Not Found");
