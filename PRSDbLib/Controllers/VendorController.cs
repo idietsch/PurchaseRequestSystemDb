@@ -9,12 +9,12 @@ namespace PRSDbLib.Controllers {
         public static void AddVendor(AppDbContext context) {
             var vend = new Vendor {
                 Id = 0,
-                Code = "vnd1",
-                Name = "Vendor 1",
-                Address = "888 Parkway Ave",
+                Code = "vnd2",
+                Name = "Vendor 2",
+                Address = "886 Parkway Ave",
                 City = "Boston",
                 State = "MA",
-                Zip = "10101",
+                Zip = "01010",
                 Phone = "5555555555",
                 Email = "email@email.com"
             };

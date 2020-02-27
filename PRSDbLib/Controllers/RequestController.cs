@@ -9,13 +9,13 @@ namespace PRSDbLib.Controllers {
         public static void AddRequest(AppDbContext context) {
             var req = new Request {
                 Id = 0,
-                Description = "Request 1",
-                Justification = "Justification 1",
-                RejectionReason = null,
+                Description = "Request 2",
+                Justification = "Want",
+                RejectionReason = "Did not want user to have",
                 DeliveryMode = default,
                 Status = default,
-                Total = 100,
-                UserId = 1
+                Total = 20,
+                UserId = 2
             };
             context.Requests.Add(req);
             var rowsAffected = context.SaveChanges();

@@ -9,12 +9,12 @@ namespace PRSDbLib.Controllers {
         public static void AddProduct(AppDbContext context) {
             var prod = new Product {
                 Id = 0,
-                PartNbr = "Prod1",
-                Name = "Product 1",
-                Price = 10,
-                Unit = "Single",
-                PhotoPath = "",
-                VendorId = 0
+                PartNbr = "Prod2",
+                Name = "Product 2",
+                Price = 20,
+                Unit = "Dozen",
+                PhotoPath = "No Look Over Here",
+                VendorId = 2
             };
             context.Products.Add(prod);
             var rowsAffected = context.SaveChanges();

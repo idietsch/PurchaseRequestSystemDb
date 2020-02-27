@@ -9,9 +9,9 @@ namespace PRSDbLib.Controllers {
         public static void AddRequestLine(AppDbContext context) {
             var reql = new RequestLine {
                 Id = 0,
-                ProductId = 0,
-                RequestId = 0,
-                Quantity = 1
+                ProductId = 2,
+                RequestId = 2,
+                Quantity = 4
             };
             context.RequestLines.Add(reql);
             var rowsAffected = context.SaveChanges();
@@ -36,7 +36,7 @@ namespace PRSDbLib.Controllers {
         }
         public static void GetRequestLinesByPk(AppDbContext context) {
             var reqlpk = 1;
-            var reql = context.Requests.Find(reqlpk);
+            var reql = context.RequestLines.Find(reqlpk);
             if (reql == null) throw new Exception("RequestLine Not Found");
             Console.WriteLine(reql);
         }

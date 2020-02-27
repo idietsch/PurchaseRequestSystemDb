@@ -9,14 +9,14 @@ namespace PRSDbLib.Controllers {
         public static void AddUser(AppDbContext context) {
             var use = new User {
                 Id = 0,
-                Username = "Username1",
-                Password = "Password1",
-                Firstname = "John",
-                Lastname = "Johnson",
-                Phone = null,
+                Username = "Username2",
+                Password = "Password2",
+                Firstname = "Joseph",
+                Lastname = "Josephson",
+                Phone = "8888666688",
                 Email = "email1@email1.com",
                 IsReviewer = true,
-                IsAdmin = false
+                IsAdmin = true
             };
             context.Users.Add(use);
             var rowsAffected = context.SaveChanges();
@@ -87,5 +87,7 @@ namespace PRSDbLib.Controllers {
         //      throw new Exception("Username Must Be Unique", ex);
         //} catch(Exception ex) {
         //      throw; }
+
+        //public static void Login()
     }
 }
