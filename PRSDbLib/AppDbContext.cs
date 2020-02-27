@@ -71,6 +71,13 @@ namespace PRSDbLib {
                 e.Property(x => x.Total).HasDefaultValue("0").HasColumnType("decimal (11, 2)");
                 e.HasOne(x => x.User).WithMany(x => x.Requests).HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Restrict);
             });
+            model.Entity<RequestLine>(e => {
+                e.ToTable("RequestLines");
+                e.HasKey(x => x.Id);
+                e.HasOne(x => x.Productx).WithMany(x => x.RequestLines).HasForeignKey(x => x.ProductId).OnDelete(DeleteBehavior.Restrict);
+                e.HasOne(x => x.Requestx).WithMany(x => x.RequestLines).HasForeignKey(x => x.RequestId).OnDelete(DeleteBehavior.Restrict);
+                e.Property(x => x.Quantity).HasDefaultValue(1);
+            });
         }
 
 

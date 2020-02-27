@@ -30,6 +30,27 @@ namespace PRSDbLib.Controllers {
             var rowsAffected = context.SaveChanges();
             if (rowsAffected != 1) throw new Exception("Delete Failed");
         }
-        static void 
+        static void GetVendorByPk(AppDbContext context) {
+            var vendpk = 1;
+            var vend = context.Vendors.Find(vendpk);
+            if (vend == null) throw new Exception("Not Found");
+            Console.WriteLine(vend);
+        }
+        static void GetAllVendors(AppDbContext context) {
+            var vends = context.Vendors.ToList();
+            foreach(var v in vends) {
+                Console.WriteLine(v);
+            }
+        }
+        static void UpdateVendors(AppDbContext context) {
+            var vendpk = 1;
+            var vend = context.Vendors.Find(vendpk);
+                if (vend == null) throw new Exception("Vendor Not Found");
+            vend.Zip = "01010";
+            var rowsAffected = context.SaveChanges();
+            if (rowsAffected != 1) throw new Exception("Update Failed");
+            Console.WriteLine("Update Successful");
+            
+        }
     }
 }

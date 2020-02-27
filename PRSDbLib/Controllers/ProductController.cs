@@ -31,7 +31,7 @@ namespace PRSDbLib.Controllers {
         static void GetAllProducts(AppDbContext context) {
             var prods = context.Users.ToList();
             foreach (var p in prods) {
-                Console.WriteLine("p");
+                Console.WriteLine(p);
             }
         }
         static void GetProductByPk(AppDbContext context) {
